@@ -1,0 +1,35 @@
+.title {
+	font-family: Roboto, sans-serif;
+	padding-top: 120px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 40px;
+	color: var(--text-main);
+	font-weight: 500;
+}
+
+.underline {
+	margin: 0 auto 100px;
+	display: flex;
+	justify-content: center;
+	content: '';
+	width: 100px;
+	height: 4px;
+	background: var(--selection-colour);
+	opacity: 0;
+}
+
+@keyframes expand-width {
+	0% {
+		transform: scaleX(0);
+	}
+
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.underline.visible {
+	opacity: 1;
+	animation: expand-width 0.2s cubic-bezier(0.42, 0, 0.04, 0.99);
+}

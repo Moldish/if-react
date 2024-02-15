@@ -1,0 +1,12 @@
+.homes-guest-loves {
+	background-color: var(--bg-colour);
+	padding-bottom: 120px;
+}
+
+.swiper {
+	padding: 0 16px;
+}
+
+.swiper-wrapper {
+	width: min-content;
+}
