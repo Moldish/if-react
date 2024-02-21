@@ -1,0 +1,64 @@
+.bar {
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: var(--white);
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 192px;
+}
+
+.element {
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    border: none;
+    appearance: none;
+    height: 100%;
+    color: var(--text-main);
+}
+
+.element:hover {
+    outline: 3px solid var(--selection-colour);
+    outline-offset: -3px;
+}
+
+.search {
+    padding: 0 0 0 24px;
+    grid-column: 1;
+    position: relative;
+}
+
+.date {
+    grid-column: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.persons {
+    grid-column: 3;
+    display: flex;
+    position: relative;
+}
+
+.btn {
+    cursor: pointer;
+    grid-column: 4;
+    background-color: var(--accent-blue);
+    border-radius: 8px;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 24px;
+    padding: 20px 57px;
+    border: unset;
+}
+
+.label {
+    font-size: 18px;
+    color: var(--white);
+    position: absolute;
+    top: -46px;
+    left: 24px;
+}
+

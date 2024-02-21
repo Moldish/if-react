@@ -1,0 +1,28 @@
+.header {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.svg {
+    cursor: pointer;
+    fill: var(--white);
+}
+
+.svg:hover {
+    transition: fill 0.2s;
+    fill: #f5bd41;
+}
