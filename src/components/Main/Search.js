@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 
-import classes from './Search.module.css';
+import { getHotels } from '../../services/hotels';
 
-import { data } from '../HomesGuestsLoves/homes-data';
+import classes from './Search.module.css';
 
 const Search = ({ onSearchResult }) => {
 	const [searchQuery, setSearchQuery] = useState('');
 
-	const handleSearch = event => {
+	const handleSearch = async event => {
 		event.preventDefault();
-		const searchValue = searchQuery.toLowerCase();
-		const results = data.filter(item => {
-			const valuesArr = Object.values(item).map(value => value.toLowerCase());
-			return valuesArr.some(values => values.includes(searchValue));
-		});
-		onSearchResult(results);
+		await getHotels({ searchQuery, onSearchResult });
 	};
 
 	return (
