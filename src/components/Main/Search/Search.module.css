@@ -54,6 +54,10 @@
     border: unset;
 }
 
+.btn:hover {
+    background-color: var(--general-blue);
+}
+
 .label {
     font-size: 18px;
     color: var(--white);
