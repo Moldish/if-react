@@ -1,0 +1,21 @@
+.next-btn {
+	all: unset;
+	background-color: var(--text-main);
+	border-radius: 50%;
+	position: absolute;
+	right: 0;
+	top: calc(50% - 75px);
+	z-index: 100;
+	cursor: pointer;
+}
+
+.prev-btn {
+	all: unset;
+	background-color: var(--text-main);
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: calc(50% - 75px);
+	z-index: 100;
+	cursor: pointer;
+}

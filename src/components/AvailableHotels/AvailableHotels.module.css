@@ -1,0 +1,30 @@
+.figure {
+    margin: 24px auto;
+    font-family: Roboto, sans-serif;
+    padding: 16px;
+    display: flex;
+    border-radius: 24px;
+    border: solid 1px var(--text-secodary);
+    background-color: var(--bg-colour);
+}
+
+.figure:last-child {
+    margin-bottom: 120px;
+}
+
+.pic {
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    border-radius: 16px;
+}
+
+.name {
+    padding-left: 16px;
+    font-size: 32px;
+    color: var(--accent-blue)
+}
+
+.location {
+    color: var(--text-main);
+    font-size: 24px;
+}
