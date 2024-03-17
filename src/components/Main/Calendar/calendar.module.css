@@ -1,0 +1,61 @@
+.month {
+	font-weight: 500;
+	font-size: 18px;
+	color: var(--text-main);
+	text-align: center;
+}
+
+.day {
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 300;
+	color: var(--dark-mode-3);
+}
+
+.current {
+	color: var(--accent-blue);
+}
+
+.selected {
+	background-color: var(--accent-blue);
+	color: var(--white);
+}
+
+.in-range {
+	background-color: var(--stroke-colour);
+}
+
+.inactive {
+	color: var(--text-secondary);
+}
+
+.not-current-month {
+	opacity: 0;
+}
+
+.calendar {
+	box-sizing: border-box;
+	height: fit-content;
+	margin: 0 auto;
+	position: relative;
+	top: 20px;
+	max-width: 290px;
+	width: 100%;
+	padding: 12px 22px;
+	border-radius: 8px;
+	background-color: var(--white);
+	transition: all ease-out 0.2s;
+}
+
+.hide {
+	max-height: 0;
+	pointer-events: none;
+	box-sizing: border-box;
+	opacity: 0;
+	padding: 0;
+	overflow: hidden;
+	filter: blur(3px);
+}
