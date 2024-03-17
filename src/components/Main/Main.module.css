@@ -1,0 +1,13 @@
+.main {
+    height: 100dvh;
+    background-image: url("../../assets/castelmezzano-1979546 1.svg");
+    background-size: cover;
+}
+
+.motto {
+    font-family: Roboto, sans-serif;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 50px;
+    margin: 200px auto 145px;
+}
