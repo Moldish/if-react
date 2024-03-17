@@ -1,35 +1,26 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 
 import Header from './Header/Header';
-import Search from './Search';
-import AvailableHotels from '../AvailableHotels/AvailableHotels';
+import Search from './Search/Search';
 
 import classes from './Main.module.css';
-export default function Main() {
-	const ref = useRef(null);
-	const [searchResults, setSearchResults] = useState([]);
-	const [showAvailable, setShowAvailable] = useState(false);
 
-	const handleSearch = result => {
-		setSearchResults(result);
-		setShowAvailable(true);
-		ref.current?.scrollIntoView({ behavior: 'smooth' });
-	};
+import { CalendarContextProvider } from '../../contexts/Calendar.context';
+import Container from '../Container/Container';
+
+export default function Main() {
 	return (
-		<>
+		<CalendarContextProvider>
 			<section className={classes.main}>
-				<div className={'container'}>
+				<Container>
 					<Header />
 					<h1 className={classes.motto}>
 						Discover stays
 						<br /> to live, work or just relax
 					</h1>
-					<Search onSearchResult={handleSearch} />
-				</div>
+					<Search />
+				</Container>
 			</section>
-			<div ref={ref}>
-				{showAvailable && <AvailableHotels searchResults={searchResults} />}
-			</div>
-		</>
+		</CalendarContextProvider>
 	);
 }

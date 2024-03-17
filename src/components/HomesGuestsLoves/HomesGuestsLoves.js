@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { getPopular } from '../../services/popular';
+
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import Container from '../Container/Container';
 import Title from '../Title/Title';
 import HomesSlide from './SwiperSlide/HomesSlide';
 import SwiperNavButtons from './SwiperNavButtons/SwiperNavButtons';
@@ -9,8 +12,6 @@ import SwiperNavButtons from './SwiperNavButtons/SwiperNavButtons';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './HomesGuestsLoves.css';
-import Container from '../Container/Container';
-import { getPopular } from '../../services/popular';
 
 const HomesGuestsLoves = () => {
 	const [data, setData] = useState([]);

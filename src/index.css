@@ -6,7 +6,7 @@
 	--accent-blue: #3077c6;
 	--general-blue: #10367c;
 	--text-main: #383838;
-	--text-secodary: #bfbfbf;
+	--text-secondary: #bfbfbf;
 	--bg-colour: #eaf0f9;
 	--stroke-colour: #f3f3f4;
 	--dark-mode-3: #4d4d4d;
@@ -15,7 +15,8 @@
 }
 
 * {
-
+	font-family: Roboto, sans-serif;
+	line-height: 1;
 }
 
 html,
@@ -71,14 +72,8 @@ fieldset,
 form,
 label,
 legend,
-table,
 caption,
-tbody,
 tfoot,
-thead,
-tr,
-th,
-td,
 article,
 aside,
 canvas,
@@ -115,12 +110,6 @@ header,
 hgroup,
 menu,
 nav,
-section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
 ol,
 ul {
 	list-style: none;
@@ -135,6 +124,5 @@ q:before,
 q:after {
 }
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
 }

@@ -1,30 +1,47 @@
 .figure {
-    margin: 24px auto;
-    font-family: Roboto, sans-serif;
-    padding: 16px;
-    display: flex;
-    border-radius: 24px;
-    border: solid 1px var(--text-secodary);
-    background-color: var(--bg-colour);
+	margin: 24px auto;
+	font-family: Roboto, sans-serif;
+	padding: 16px;
+	display: flex;
+	border-radius: 24px;
+	border: solid 1px var(--text-secondary);
+	background-color: var(--bg-colour);
 }
 
 .figure:last-child {
-    margin-bottom: 120px;
+	margin-bottom: 120px;
 }
 
 .pic {
-    max-width: 300px;
-    aspect-ratio: 1/1;
-    border-radius: 16px;
+	max-width: 300px;
+	aspect-ratio: 1/1;
+	border-radius: 16px;
 }
 
 .name {
-    padding-left: 16px;
-    font-size: 32px;
-    color: var(--accent-blue)
+	padding-left: 16px;
+	font-size: 32px;
+	color: var(--accent-blue);
 }
 
 .location {
-    color: var(--text-main);
-    font-size: 24px;
+	color: var(--text-main);
+	font-size: 24px;
+}
+
+.expand {
+	display: block;
+	font-size: 18px;
+	max-width: 150px;
+	padding: 8px;
+	width: 100%;
+	margin: 48px auto 100px;
+	border-radius: 8px;
+	border: 1px solid var(--text-main);
+	background-color: var(--bg-colour);
+}
+
+.expand:hover {
+	transition: all 0.2s;
+	background-color: #b3c9e1ff;
 }
