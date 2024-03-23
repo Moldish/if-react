@@ -1,0 +1,91 @@
+.bar {
+	max-height: 64px;
+	outline: 3px solid var(--stroke-colour);
+	outline-offset: -3px;
+	border-radius: 8px;
+	background-color: var(--white);
+	font-size: 18px;
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr 192px;
+}
+
+.element {
+	font-family: Roboto, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	border-radius: 8px;
+	border: none;
+	appearance: none;
+	max-height: 64px;
+	height: 100%;
+	color: var(--text-main);
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.element:focus {
+	outline: 3px solid var(--selection-colour);
+	outline-offset: -3px;
+}
+
+.search {
+	padding: 0 0 0 24px;
+	grid-column: 1;
+	position: relative;
+}
+
+.date-div {
+	grid-column: 2;
+	z-index: 10;
+	position: relative;
+}
+
+.date {
+	width: 100%;
+	border: solid 1px #cecece;
+	z-index: 1000;
+}
+
+.counter-div {
+	grid-column: 3;
+	z-index: 10;
+	position: relative;
+}
+
+.persons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	display: flex;
+}
+
+.btn {
+	grid-column: 4;
+	cursor: pointer;
+	max-width: 192px;
+	width: 100%;
+	background-color: var(--accent-blue);
+	border-radius: 8px;
+	color: var(--white);
+	font-weight: 500;
+	font-size: 24px;
+	padding: 20px 57px;
+	border: unset;
+	max-height: 64px;
+	height: 100%;
+	z-index: 10;
+	transition: all 0.2s;
+}
+
+.btn:hover {
+	background-color: var(--general-blue);
+}
+
+.label {
+	font-size: 18px;
+	color: var(--white);
+	position: absolute;
+	top: -46px;
+	left: 24px;
+}
