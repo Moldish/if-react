@@ -2,72 +2,57 @@ import React, { useContext, useState } from 'react';
 
 import { useHotelSearch } from '../../../hooks/useHotelSearch';
 
+import formateDate from './formateDate';
+import getDayMs from './getDayMs';
+
 import Calendar from '../Calendar/Calendar';
 
 import classes from './Search.module.css';
 
 import CalendarContext from '../../../contexts/Calendar.context';
 import SearchContext from '../../../contexts/Search.context';
+import Counter from '../Counter/Counter';
 
 const Search = () => {
 	const { setCalendarShow, checkIn, checkOut } = useContext(CalendarContext);
-	const { setShow } = useContext(SearchContext);
+	const { setAvailableShow } = useContext(SearchContext);
+	const [counterData, setCounterData] = useState({
+		Adults: '1',
+		Children: '0',
+		Rooms: '1'
+	});
+	const [counterShow, setCounterShow] = useState(false);
 	const [searchQuery, setSearchQuery] = useState('');
 	const { fetchData } = useHotelSearch(searchQuery);
 
-	const currentYear = new Date().getFullYear();
-
-	const getDayMs = date => {
-		const dayMs = new Date(currentYear, new Date().getMonth(), date).setHours(
-			0,
-			0,
-			0,
-			0
-		);
-		return dayMs;
-	};
-
 	const checkInMs = getDayMs(checkIn);
 	const checkOutMs = getDayMs(checkOut);
-
-	const formateDate = dateMs => {
-		let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-		let months = [
-			'Jan',
-			'Feb',
-			'Mar',
-			'Apr',
-			'May',
-			'Jun',
-			'Jul',
-			'Aug',
-			'Sep',
-			'Okt',
-			'Nov',
-			'Dec'
-		];
-
-		let date = new Date(dateMs);
-		let dayOfWeek = days[date.getDay()];
-		let day = date.getDate();
-		let month = months[date.getMonth()];
-
-		return `${dayOfWeek} ${day} ${month}`;
-	};
-
-	const handleExpand = event => {
-		event.preventDefault();
-		setCalendarShow(prevState => !prevState);
-	};
 
 	const handleInputChange = event => {
 		event.preventDefault();
 		setSearchQuery(event.target.value);
 	};
 
+	const handleCalendarExpand = event => {
+		event.preventDefault();
+		setCalendarShow(prevState => !prevState);
+	};
+
+	const handleCounterData = (name, counterData) => {
+		setCounterData(prevState => ({
+			...prevState,
+			[name]: counterData
+		}));
+	};
+
+	const handleCounterExpand = event => {
+		event.preventDefault();
+		setCounterShow(prevState => !prevState);
+	};
+
 	const handleSearch = async event => {
 		event.preventDefault();
-		setShow(true);
+		setAvailableShow(true);
 		fetchData(searchQuery);
 	};
 
@@ -82,7 +67,7 @@ const Search = () => {
 				/>
 				<div className={classes['date-div']}>
 					<button
-						onClick={handleExpand}
+						onClick={handleCalendarExpand}
 						className={`${classes.date} ${classes.element}`}
 					>
 						{checkIn != undefined ? formateDate(checkInMs) : 'Check-In'} —
@@ -91,10 +76,16 @@ const Search = () => {
 					</button>
 					<Calendar />
 				</div>
-
-				<select className={`${classes.persons} ${classes.element}`}>
-					<option value='111'>111</option>
-				</select>
+				<div className={classes['counter-div']}>
+					<button
+						className={`${classes.persons} ${classes.element}`}
+						onClick={handleCounterExpand}
+					>
+						Adults {counterData.Adults} — Children {counterData.Children} —
+						Rooms {counterData.Rooms}
+					</button>
+					<Counter show={counterShow} onDataCounter={handleCounterData} />
+				</div>
 				<button onClick={handleSearch} className={classes.btn}>
 					Search
 				</button>

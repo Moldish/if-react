@@ -1,0 +1,75 @@
+.counter {
+	box-sizing: border-box;
+	max-width: 260px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	position: absolute;
+	right: 50%;
+	transform: translateX(50%);
+	z-index: 100;
+	padding: 18px 22px;
+	margin-top: 20px;
+	overflow: hidden;
+	border-radius: 8px;
+	background-color: var(--white);
+	transition: all 0.2s ease-out;
+}
+
+.hide {
+	filter: blur(3px);
+	padding: 0;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.element {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	font-size: 16px;
+}
+
+.name {
+	width: 100%;
+}
+
+.button {
+	min-width: 30px;
+	height: 30px;
+	color: var(--accent-blue);
+	border: var(--accent-blue) solid 1px;
+	font-size: 18px;
+	background-color: var(--white);
+	cursor: pointer;
+}
+
+.count {
+	min-width: 18px;
+	text-align: center;
+	padding: 0 20px;
+}
+
+.disable {
+	color: var(--text-secondary);
+	border: var(--text-secondary) solid 1px;
+}
+
+.child {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	font-size: 12px;
+}
+
+.select {
+	display: block;
+	border: var(--accent-blue) solid 1px;
+	color: var(--black);
+	font-size: 12px;
+	font-weight: 400;
+	padding: 8px;
+	max-width: 120px;
+}

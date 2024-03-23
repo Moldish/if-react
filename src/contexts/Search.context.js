@@ -6,9 +6,9 @@ export const SearchContext = createContext({
 
 export const SearchContextProvider = ({ children }) => {
 	const [data, setData] = useState([]);
-	const [show, setShow] = useState(false);
+	const [show, setAvailableShow] = useState(false);
 	return (
-		<SearchContext.Provider value={{ data, setData, show, setShow }}>
+		<SearchContext.Provider value={{ data, setData, show, setAvailableShow }}>
 			{children}
 		</SearchContext.Provider>
 	);

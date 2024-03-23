@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import CalendarTable from './CalendarTable';
 import month from './getCalendar';
 
 const Calendar = () => {
-	const monthArr = month().monthArr;
-	const monthName = month().monthName;
-	const currentYear = month().currentYear;
+	const memoizedMonth = useMemo(() => month(), []);
+
+	const monthArr = memoizedMonth.monthArr;
+	const monthName = memoizedMonth.monthName;
+	const currentYear = memoizedMonth.currentYear;
 	return (
 		<CalendarTable
 			month={monthArr}
